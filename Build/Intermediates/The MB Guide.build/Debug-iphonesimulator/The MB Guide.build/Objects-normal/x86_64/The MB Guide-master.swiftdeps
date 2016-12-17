@@ -1,6 +1,0 @@
-version: "Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1)"
-options: "d569e427091f994965044ce77c15a1cb"
-build_time: [535258228, 1605000]
-inputs:
-  "/Users/martinzhang/Desktop/iOS Development /The MB Guide/The MB Guide/ViewController.swift": [535258224, 0]
-  "/Users/martinzhang/Desktop/iOS Development /The MB Guide/The MB Guide/AppDelegate.swift": [535258224, 0]
