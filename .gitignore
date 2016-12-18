@@ -69,4 +69,6 @@ fastlane/screenshots
 fastlane/test_output
 
 Build/
+The MB Guide.xcodeproj/project.pbxproj
 The MB Guide.xcodeproj/project.xcworkspace/xcuserdata/
+The MB Guide.xcodeproj/xcuserdata/martinzhang.xcuserdatad/xcschemes/The MB Guide.xcscheme
