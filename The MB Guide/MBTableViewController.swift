@@ -10,8 +10,6 @@ import UIKit
 
 class MBTableViewController: UITableViewController {
 
-    var garage = MBGarage()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,8 +41,6 @@ class MBTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mBCell", for: indexPath)
-
-        cell.textLabel?.text = garage.c63s.vehicleName
         
         return cell
     }

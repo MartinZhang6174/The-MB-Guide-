@@ -9,16 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    // Defining all Mercedes vehicles here
+//    let c63scoupe = c63S(carName: "Mercedes-AMG C63 S", aMG: true, horsepower: 503, convertible: true, hardTop: false, body: .coupe)
+    let cKlass63SSedan = c63ssedan()
+    
     @IBOutlet weak var mBCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        var c = c63S(carName: "Mercedes-AMG C63 S", aMG: true, horsepower: 503, convertible: false, hardTop: false, body: .sedan)
-        var mBGagarge = MBGarage()
-        
+        print(self.cKlass63SSedan.vehicleName)
         
     }
 
