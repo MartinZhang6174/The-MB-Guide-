@@ -9,10 +9,21 @@
 import UIKit
 
 class MBTableViewController: UITableViewController {
+    
+    // Defining all Mercedes vehicles here
+    var allMBVehicles: [MBVehicleModel] {
+        let cKlass63SSedan = c63ssedan()
+        let cKlass63SCoupe = c63scoupe()
+        let cKlass63SCab = c63scabriolet()
+        let cKlass43Sedan = c43sedan()
+        
+        return [cKlass63SSedan, cKlass63SCoupe, cKlass63SCab, cKlass43Sedan]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.backgroundColor = UIColor.black
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -35,14 +46,16 @@ class MBTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return self.allMBVehicles.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "mBCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mBCell", for: indexPath) as? MBTableViewCell
+
+        cell?.vehicleNameLabel.text = self.allMBVehicles[indexPath.row].vehicleName
         
-        return cell
+        return cell!
     }
     
 

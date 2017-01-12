@@ -1,30 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fcw-YH-0ti">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--The MB Guide-->
         <scene sceneID="oYv-WM-rHw">
             <objects>
                 <tableViewController id="2La-cs-TOE" customClass="MBTableViewController" customModule="The_MB_Guide" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="k5t-qi-bqp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="256" sectionHeaderHeight="28" sectionFooterHeight="28" id="k5t-qi-bqp">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mBCell" id="u81-f8-wph">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mBCell" rowHeight="256" id="u81-f8-wph" customClass="MBTableViewCell" customModule="The_MB_Guide" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="256"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u81-f8-wph" id="FFt-Z5-8eB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercedes-AMG GT S Coupe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2N-Fx-gSf">
+                                            <rect key="frame" x="8" y="8" width="218" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="c63ssedan" translatesAutoresizingMaskIntoConstraints="NO" id="Khr-ih-KnU">
+                                            <rect key="frame" x="8" y="41" width="359" height="205"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="205" id="iJR-S6-QDQ"/>
+                                                <constraint firstAttribute="width" constant="359" id="oWi-t6-3zq"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Khr-ih-KnU" firstAttribute="centerX" secondItem="FFt-Z5-8eB" secondAttribute="centerX" id="ZmG-US-iMa"/>
+                                        <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="z2N-Fx-gSf" secondAttribute="trailing" constant="321.5" id="bZy-bZ-OtY"/>
+                                        <constraint firstItem="z2N-Fx-gSf" firstAttribute="top" secondItem="FFt-Z5-8eB" secondAttribute="topMargin" id="rGs-Fx-m3I"/>
+                                        <constraint firstItem="Khr-ih-KnU" firstAttribute="top" secondItem="z2N-Fx-gSf" secondAttribute="bottom" constant="12.5" id="uIt-NC-N5K"/>
+                                        <constraint firstItem="z2N-Fx-gSf" firstAttribute="leading" secondItem="FFt-Z5-8eB" secondAttribute="leadingMargin" id="y6m-gm-EcL"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <outlet property="vehicleImageView" destination="Khr-ih-KnU" id="on0-iK-gmq"/>
+                                    <outlet property="vehicleNameLabel" destination="z2N-Fx-gSf" id="9wM-lH-AUp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -32,10 +60,11 @@
                             <outlet property="delegate" destination="2La-cs-TOE" id="Hwe-zp-aez"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="The MB Guide" id="yMX-Au-L2W"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjj-qY-Om2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="25" y="-639"/>
+            <point key="canvasLocation" x="964" y="-639.13043478260875"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -86,5 +115,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e7T-xi-LHo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fcw-YH-0ti" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Pfk-gz-uIL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2La-cs-TOE" kind="relationship" relationship="rootViewController" id="gp6-Rd-62Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8GI-Sv-9HG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="-639.13043478260875"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="c63ssedan" width="1920" height="1080"/>
+    </resources>
 </document>
