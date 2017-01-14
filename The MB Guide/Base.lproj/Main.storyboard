@@ -23,17 +23,17 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="256"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u81-f8-wph" id="FFt-Z5-8eB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="255.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercedes-AMG GT S Coupe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2N-Fx-gSf">
-                                            <rect key="frame" x="8" y="8" width="218" height="20.5"/>
+                                            <rect key="frame" x="8" y="8" width="218" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="c63ssedan" translatesAutoresizingMaskIntoConstraints="NO" id="Khr-ih-KnU">
-                                            <rect key="frame" x="8" y="41" width="359" height="205"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mercedes-AMG GT S" translatesAutoresizingMaskIntoConstraints="NO" id="Khr-ih-KnU">
+                                            <rect key="frame" x="8" y="42" width="359" height="205"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="205" id="iJR-S6-QDQ"/>
                                                 <constraint firstAttribute="width" constant="359" id="oWi-t6-3zq"/>
@@ -61,10 +61,57 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="The MB Guide" id="yMX-Au-L2W"/>
+                    <connections>
+                        <segue destination="vvt-yJ-tbk" kind="show" identifier="presentVehicleDetailViewControllerSegue" id="AIO-nY-UVs"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjj-qY-Om2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="964" y="-639.13043478260875"/>
+        </scene>
+        <!--Vehicle Detail View Controller-->
+        <scene sceneID="POW-3y-XZi">
+            <objects>
+                <viewController id="vvt-yJ-tbk" customClass="MBVehicleDetailViewController" customModule="The_MB_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GMO-8v-0Rs"/>
+                        <viewControllerLayoutGuide type="bottom" id="igf-jT-Wpf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NbB-3n-SAV">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JuB-bl-dGs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="RRK-ln-Pkf"/>
+                                    <constraint firstAttribute="width" constant="375" id="uAZ-sb-005"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMG " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlw-qg-w7s">
+                                <rect key="frame" x="24" y="391" width="110" height="53"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wlw-qg-w7s" firstAttribute="leading" secondItem="NbB-3n-SAV" secondAttribute="leadingMargin" constant="8" id="0G4-Jd-FsW"/>
+                            <constraint firstItem="Wlw-qg-w7s" firstAttribute="top" secondItem="JuB-bl-dGs" secondAttribute="bottom" constant="16" id="Lqn-Kl-luB"/>
+                            <constraint firstItem="JuB-bl-dGs" firstAttribute="centerX" secondItem="NbB-3n-SAV" secondAttribute="centerX" id="TAW-mu-XL1"/>
+                            <constraint firstItem="JuB-bl-dGs" firstAttribute="top" secondItem="NbB-3n-SAV" secondAttribute="top" id="Vhi-pv-Kbx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="acm-uz-dUZ"/>
+                    <connections>
+                        <outlet property="vehicleDetailImageView" destination="JuB-bl-dGs" id="JB7-U3-Cuf"/>
+                        <outlet property="vehicleDetailTitleLabel" destination="Wlw-qg-w7s" id="9LR-Jf-gq1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="re4-VO-9Rm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712.8" y="-639.13043478260875"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -123,6 +170,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Pfk-gz-uIL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -135,6 +183,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="c63ssedan" width="1920" height="1080"/>
+        <image name="Mercedes-AMG GT S" width="960" height="540"/>
     </resources>
 </document>
