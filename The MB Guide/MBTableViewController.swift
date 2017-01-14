@@ -10,7 +10,6 @@ import UIKit
 
 class MBTableViewController: UITableViewController {
     
-    
     // MARK: Segue Identifier
     let detailSegueID = "presentVehicleDetailViewControllerSegue"
     
@@ -47,11 +46,11 @@ class MBTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.backgroundColor = UIColor.black
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Bodoni 72 Smallcaps", size: 24)!]
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }

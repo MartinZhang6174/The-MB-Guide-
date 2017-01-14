@@ -27,13 +27,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercedes-AMG GT S Coupe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2N-Fx-gSf">
-                                            <rect key="frame" x="8" y="8" width="218" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="8" y="8" width="195" height="22"/>
+                                            <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mercedes-AMG GT S" translatesAutoresizingMaskIntoConstraints="NO" id="Khr-ih-KnU">
-                                            <rect key="frame" x="8" y="42" width="359" height="205"/>
+                                            <rect key="frame" x="8" y="43" width="359" height="205"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="205" id="iJR-S6-QDQ"/>
                                                 <constraint firstAttribute="width" constant="359" id="oWi-t6-3zq"/>
@@ -60,14 +60,18 @@
                             <outlet property="delegate" destination="2La-cs-TOE" id="Hwe-zp-aez"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="The MB Guide" id="yMX-Au-L2W"/>
+                    <navigationItem key="navigationItem" title="The MB Guide" id="yMX-Au-L2W">
+                        <barButtonItem key="rightBarButtonItem" image="Settings" style="plain" id="IFc-QF-dGB">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="vvt-yJ-tbk" kind="show" identifier="presentVehicleDetailViewControllerSegue" id="AIO-nY-UVs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjj-qY-Om2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="-639.13043478260875"/>
+            <point key="canvasLocation" x="895" y="-639"/>
         </scene>
         <!--Vehicle Detail View Controller-->
         <scene sceneID="POW-3y-XZi">
@@ -89,8 +93,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMG " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlw-qg-w7s">
-                                <rect key="frame" x="24" y="391" width="110" height="53"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="44"/>
+                                <rect key="frame" x="24" y="391" width="50.5" height="26.5"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Bold" family="Bodoni 72 Oldstyle" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -184,5 +188,6 @@
     </scenes>
     <resources>
         <image name="Mercedes-AMG GT S" width="960" height="540"/>
+        <image name="Settings" width="24" height="24"/>
     </resources>
 </document>
