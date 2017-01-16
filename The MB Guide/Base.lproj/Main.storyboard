@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="256"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u81-f8-wph" id="FFt-Z5-8eB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="255.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercedes-AMG GT S Coupe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2N-Fx-gSf">
@@ -71,7 +71,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjj-qY-Om2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="-639"/>
+            <point key="canvasLocation" x="878" y="-639"/>
         </scene>
         <!--Vehicle Detail View Controller-->
         <scene sceneID="POW-3y-XZi">
@@ -94,7 +94,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMG " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlw-qg-w7s">
                                 <rect key="frame" x="24" y="391" width="50.5" height="26.5"/>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Bold" family="Bodoni 72 Oldstyle" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -171,7 +171,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fcw-YH-0ti" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Pfk-gz-uIL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Pfk-gz-uIL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
