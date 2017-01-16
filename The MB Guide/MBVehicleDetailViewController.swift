@@ -20,7 +20,7 @@ class MBVehicleDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        vehicleDetailImageView.image = UIImage(named: vehicleDetailImageName)
+        vehicleDetailImageView.image = UIImage(named: vehicleDetailImageName + "_Detail")
         vehicleDetailTitleLabel.text = vehicleDetailTitleText
         // Do any additional setup after loading the view.
     }
