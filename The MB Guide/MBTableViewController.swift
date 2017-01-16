@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MBTableViewController: UITableViewController {
+class MBTableViewController: UITableViewController, UIViewControllerPreviewingDelegate {
     
     // MARK: Segue Identifier
     let detailSegueID = "presentVehicleDetailViewControllerSegue"
@@ -45,18 +45,51 @@ class MBTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // self.clearsSelectionOnViewWillAppear = false
+        
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
         self.tableView.backgroundColor = UIColor.black
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Bodoni 72 Smallcaps", size: 24)!]
         
         
         // MARK: 3D TOUCH
-
+        if (traitCollection.forceTouchCapability == .available) {
+            registerForPreviewing(with: self, sourceView: view)
+        }
     }
-
-        // self.clearsSelectionOnViewWillAppear = false
     
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    // 3D Touch: Peek
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = tableView.indexPathForRow(at: location) else {
+            return nil
+        }
+        
+        guard let cell = tableView.cellForRow(at: indexPath) as? MBTableViewCell else {
+            return nil
+        }
+        
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "MBVehicleDetailViewController") as? MBVehicleDetailViewController else {
+            return nil
+        }
+        
+        detailVC.vehicleDetailImageName = cell.vehicleNameLabel.text!
+        detailVC.vehicleDetailTitleText = cell.vehicleNameLabel.text!
+        
+        detailVC.preferredContentSize = CGSize(width: 0.0, height: 450)
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return detailVC
+    }
+    
+    // 3D Touch:Pop
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+        show(viewControllerToCommit, sender: self)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         

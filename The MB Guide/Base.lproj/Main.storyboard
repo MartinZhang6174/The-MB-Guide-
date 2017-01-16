@@ -76,7 +76,7 @@
         <!--Vehicle Detail View Controller-->
         <scene sceneID="POW-3y-XZi">
             <objects>
-                <viewController id="vvt-yJ-tbk" customClass="MBVehicleDetailViewController" customModule="The_MB_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MBVehicleDetailViewController" id="vvt-yJ-tbk" customClass="MBVehicleDetailViewController" customModule="The_MB_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GMO-8v-0Rs"/>
                         <viewControllerLayoutGuide type="bottom" id="igf-jT-Wpf"/>
