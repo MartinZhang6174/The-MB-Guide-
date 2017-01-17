@@ -75,8 +75,13 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
             return nil
         }
         
-        detailVC.vehicleDetailImageName = cell.vehicleNameLabel.text!
         detailVC.vehicleDetailTitleText = cell.vehicleNameLabel.text!
+        let detailImage = UIImage(named: cell.vehicleNameLabel.text! + "_Detail")
+        if detailImage == nil {
+            detailVC.vehicleDetailImageName = cell.vehicleNameLabel.text!
+        } else {
+            detailVC.vehicleDetailImageName = cell.vehicleNameLabel.text! + "_Detail"
+        }
         
         detailVC.preferredContentSize = CGSize(width: 0.0, height: 450)
         
@@ -178,7 +183,7 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
 
     
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Pass the selected object to the new view controller.
         
@@ -187,8 +192,12 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let selectedMB = allMBVehicles[indexPath.row]
                 
-                destVC.vehicleDetailImageName = "\(selectedMB.vehicleName)_Detail"
                 destVC.vehicleDetailTitleText = selectedMB.vehicleName
+                if UIImage(named: selectedMB.vehicleName + "_Detail") == nil {
+                    destVC.vehicleDetailImageName = selectedMB.vehicleName
+                } else {
+                    destVC.vehicleDetailImageName = "\(selectedMB.vehicleName)_Detail"
+                }
             }
         }
     }
