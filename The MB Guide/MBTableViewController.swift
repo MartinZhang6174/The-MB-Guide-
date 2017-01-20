@@ -24,8 +24,14 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         let cKlass43Cab = c43cabriolet()
         let cKlass63SCab = c63scabriolet()
         
+        // E klass
+        let eKlass43Sedan = e43sedan()
+        let eKlass63Sedan = e63sedan()
+        let eklass63SSedan = e63ssedan()
+        
         // GT klass
         let gtKlassCoupe = gt()
+//        let gtKlassRoadster = gt()
         let gtKlassSCoupe = gts()
         let gtKlassRCoupe = gtr()
         let gtKlassCRoadster = gtc()
@@ -36,6 +42,9 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
                 cKlass43Coupe,
                 cKlass43Cab,
                 cKlass63SCab,
+                eKlass43Sedan,
+                eKlass63Sedan,
+                eklass63SSedan,
                 gtKlassCoupe,
                 gtKlassSCoupe,
                 gtKlassRCoupe,
