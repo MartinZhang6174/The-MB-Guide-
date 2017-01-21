@@ -16,6 +16,9 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
     // Defining all Mercedes vehicles here
     var allMBVehicles: [MBVehicleModel] {
         
+        // A klass
+        let aKlass45Sedan = a45()
+        
         // C klass
         let cKlass63SSedan = c63ssedan()
         let cKlass63SCoupe = c63scoupe()
@@ -26,23 +29,26 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         
         // E klass
         let eKlass43Sedan = e43sedan()
+        let eKlass43Wagon = e43wagon()
         let eKlass63Sedan = e63sedan()
         let eklass63SSedan = e63ssedan()
         
         // GT klass
         let gtKlassCoupe = gt()
-//        let gtKlassRoadster = gt()
+        // let gtKlassRoadster = gt()
         let gtKlassSCoupe = gts()
         let gtKlassRCoupe = gtr()
         let gtKlassCRoadster = gtc()
         
-        return [cKlass63SSedan,
+        return [aKlass45Sedan,
+                cKlass63SSedan,
                 cKlass63SCoupe,
                 cKlass43Sedan,
                 cKlass43Coupe,
                 cKlass43Cab,
                 cKlass63SCab,
                 eKlass43Sedan,
+                eKlass43Wagon,
                 eKlass63Sedan,
                 eklass63SSedan,
                 gtKlassCoupe,
