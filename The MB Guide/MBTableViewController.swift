@@ -28,6 +28,8 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         let cKlass63SCab = c63scabriolet()
         
         // E klass
+        let eKlass300Sedan = e300sedan()
+        let eKlass400Sedan = e400sedan()
         let eKlass43Sedan = e43sedan()
         let eKlass43Wagon = e43wagon()
         let eKlass63Sedan = e63sedan()
@@ -47,6 +49,8 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
                 cKlass43Coupe,
                 cKlass43Cab,
                 cKlass63SCab,
+                eKlass300Sedan,
+                eKlass400Sedan,
                 eKlass43Sedan,
                 eKlass43Wagon,
                 eKlass63Sedan,
@@ -66,6 +70,7 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.tableView.backgroundColor = UIColor.black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Bodoni 72 Smallcaps", size: 24)!]
         
         
@@ -140,16 +145,14 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         cellBGView.backgroundColor = UIColor.darkGray
         
         let theMB = self.allMBVehicles[indexPath.row]
-
+        
         cell?.vehicleNameLabel.text = theMB.vehicleName
         cell?.vehicleImageView.image = UIImage(named: theMB.vehicleName)
         cell?.selectedBackgroundView = cellBGView
         
-        // Adding AMG badge onto vehicle image
+        // Adding AMG badge onto AMG vehicle cell
         if theMB.isAMGVehicle == true {
-            let amgImageView = UIImageView(image: #imageLiteral(resourceName: "Mercedes-AMG Logo"))
-            amgImageView.frame = CGRect(x: 20, y: 20, width: (cell?.vehicleImageView.frame.width)! * 0.270195, height: (cell?.vehicleImageView.frame.height)! * 0.046341)
-            cell?.vehicleImageView.addSubview(amgImageView)
+            cell?.badgeImageView.image = UIImage(named: "Mercedes-AMG Logo")
         }
         
         return cell!
