@@ -28,8 +28,6 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         let cKlass63SCab = c63scabriolet()
         
         // E klass
-        let eKlass300Sedan = e300sedan()
-        let eKlass400Sedan = e400sedan()
         let eKlass43Sedan = e43sedan()
         let eKlass43Wagon = e43wagon()
         let eKlass63Sedan = e63sedan()
@@ -37,7 +35,7 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         
         // GT klass
         let gtKlassCoupe = gt()
-        // let gtKlassRoadster = gt()
+        let gtKlassRoadster = gtroadster()
         let gtKlassSCoupe = gts()
         let gtKlassRCoupe = gtr()
         let gtKlassCRoadster = gtc()
@@ -49,13 +47,12 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
                 cKlass43Coupe,
                 cKlass43Cab,
                 cKlass63SCab,
-                eKlass300Sedan,
-                eKlass400Sedan,
                 eKlass43Sedan,
                 eKlass43Wagon,
                 eKlass63Sedan,
                 eklass63SSedan,
                 gtKlassCoupe,
+                gtKlassRoadster,
                 gtKlassSCoupe,
                 gtKlassRCoupe,
                 gtKlassCRoadster]
@@ -96,6 +93,7 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         }
         
         detailVC.vehicleDetailTitleText = cell.vehicleNameLabel.text!
+        
         let detailImage = UIImage(named: cell.vehicleNameLabel.text! + "_Detail")
         if detailImage == nil {
             detailVC.vehicleDetailImageName = cell.vehicleNameLabel.text!
@@ -103,7 +101,7 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
             detailVC.vehicleDetailImageName = cell.vehicleNameLabel.text! + "_Detail"
         }
         
-        detailVC.preferredContentSize = CGSize(width: 0.0, height: 450)
+        detailVC.preferredContentSize = CGSize(width: 0.0, height: 490)
         
         previewingContext.sourceRect = cell.frame
         

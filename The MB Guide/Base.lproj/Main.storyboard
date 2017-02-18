@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fcw-YH-0ti">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fcw-YH-0ti">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,15 +15,15 @@
             <objects>
                 <tableViewController id="2La-cs-TOE" customClass="MBTableViewController" customModule="The_MB_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="256" sectionHeaderHeight="28" sectionFooterHeight="28" id="k5t-qi-bqp">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mBCell" rowHeight="256" id="u81-f8-wph" customClass="MBTableViewCell" customModule="The_MB_Guide" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="256"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="256"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u81-f8-wph" id="FFt-Z5-8eB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="255.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="255.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercedes-AMG GT S Coupe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2N-Fx-gSf">
@@ -32,15 +32,15 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mercedes-AMG GT S" translatesAutoresizingMaskIntoConstraints="NO" id="Khr-ih-KnU">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mercedes-AMG GT S" translatesAutoresizingMaskIntoConstraints="NO" id="Khr-ih-KnU">
                                             <rect key="frame" x="8" y="43" width="359" height="205"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="205" id="iJR-S6-QDQ"/>
                                                 <constraint firstAttribute="width" constant="359" id="oWi-t6-3zq"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3CDF4539-0777-49BC-A86C-5B86F8A71404" translatesAutoresizingMaskIntoConstraints="NO" id="tI3-HK-xE6">
-                                            <rect key="frame" x="16" y="60" width="104" height="14"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CAEC49BB-5F6C-47A6-A8E8-D7A514466E80" translatesAutoresizingMaskIntoConstraints="NO" id="tI3-HK-xE6">
+                                            <rect key="frame" x="23" y="57" width="104" height="14"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="104" id="4gW-r7-gIu"/>
                                                 <constraint firstAttribute="height" constant="14" id="GWe-6d-zhu"/>
@@ -48,11 +48,13 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="tI3-HK-xE6" firstAttribute="top" secondItem="z2N-Fx-gSf" secondAttribute="bottom" constant="30" id="4tu-uI-pMK"/>
-                                        <constraint firstItem="Khr-ih-KnU" firstAttribute="centerX" secondItem="FFt-Z5-8eB" secondAttribute="centerX" id="ZmG-US-iMa"/>
+                                        <constraint firstItem="Khr-ih-KnU" firstAttribute="centerX" secondItem="FFt-Z5-8eB" secondAttribute="centerX" id="9yK-6U-ZsC"/>
+                                        <constraint firstItem="tI3-HK-xE6" firstAttribute="leading" secondItem="Khr-ih-KnU" secondAttribute="leading" constant="15" id="BcS-hk-TGX"/>
+                                        <constraint firstItem="tI3-HK-xE6" firstAttribute="top" secondItem="Khr-ih-KnU" secondAttribute="top" constant="14" id="PQn-HO-sY1"/>
+                                        <constraint firstAttribute="trailing" secondItem="Khr-ih-KnU" secondAttribute="trailing" constant="8" id="Qd9-2s-nfN"/>
                                         <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="z2N-Fx-gSf" secondAttribute="trailing" constant="321.5" id="bZy-bZ-OtY"/>
-                                        <constraint firstItem="tI3-HK-xE6" firstAttribute="leading" secondItem="FFt-Z5-8eB" secondAttribute="leadingMargin" constant="8" id="lt8-fO-hDz"/>
                                         <constraint firstItem="z2N-Fx-gSf" firstAttribute="top" secondItem="FFt-Z5-8eB" secondAttribute="topMargin" id="rGs-Fx-m3I"/>
+                                        <constraint firstItem="Khr-ih-KnU" firstAttribute="leading" secondItem="FFt-Z5-8eB" secondAttribute="leading" constant="8" id="tEm-o3-ajQ"/>
                                         <constraint firstItem="Khr-ih-KnU" firstAttribute="top" secondItem="z2N-Fx-gSf" secondAttribute="bottom" constant="12.5" id="uIt-NC-N5K"/>
                                         <constraint firstItem="z2N-Fx-gSf" firstAttribute="leading" secondItem="FFt-Z5-8eB" secondAttribute="leadingMargin" id="y6m-gm-EcL"/>
                                     </constraints>
@@ -71,7 +73,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="The MB Guide" id="yMX-Au-L2W">
-                        <barButtonItem key="backBarButtonItem" title="        " id="0OR-Li-jAX"/>
+                        <barButtonItem key="backBarButtonItem" title="          " id="6nG-85-m7u"/>
                         <barButtonItem key="rightBarButtonItem" image="Settings" style="plain" id="IFc-QF-dGB">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -93,32 +95,58 @@
                         <viewControllerLayoutGuide type="bottom" id="igf-jT-Wpf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NbB-3n-SAV">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mercedes-AMG GT S_Detail" translatesAutoresizingMaskIntoConstraints="NO" id="JuB-bl-dGs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="375" id="RRK-ln-Pkf"/>
-                                    <constraint firstAttribute="width" constant="375" id="uAZ-sb-005"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMG " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlw-qg-w7s">
-                                <rect key="frame" x="24" y="391" width="51" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMG GT S Coupe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlw-qg-w7s">
+                                <rect key="frame" x="28" y="391" width="154" height="27"/>
                                 <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foH-kL-zsc">
+                                <rect key="frame" x="30" y="435" width="354" height="217"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFY-6i-ZpM">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="217"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <mutableString key="text">The Mercedes-AMG GT S freatures the AMG M178 4.0 litre twin-turbo charged V8 engine. According to AMG, the GT S is capable of reaching 60 mph in 3.8 seconds; however, tests have proven that the GT S can easily break the official claim and reach 60 mph in just 3.0 seconds. The Mercedes-AMG GT S freatures the AMG M178 4.0 litre twin-turbo charged V8 engine. According to AMG, the GT S is capable of reaching 60 mph in 3.8 seconds; however, tests have proven that the GT S can easily break that claim and reach 60 mph in just 3.0 seconds.The Mercedes-AMG GT S freatures the AMG M178 4.0 litre twin-turbo charged V8 engine. According to AMG, the GT S is capable of reaching 60 mph in 3.8 seconds; however, tests have proven that the GT S can easily break that claim and reach 60 mph in just 3.0 seconds.</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="mFY-6i-ZpM" secondAttribute="bottom" id="Bzs-5A-2Ev"/>
+                                    <constraint firstItem="mFY-6i-ZpM" firstAttribute="leading" secondItem="foH-kL-zsc" secondAttribute="leading" id="DVg-By-bX2"/>
+                                    <constraint firstItem="mFY-6i-ZpM" firstAttribute="height" secondItem="foH-kL-zsc" secondAttribute="height" id="YSM-rq-Yt2"/>
+                                    <constraint firstAttribute="trailing" secondItem="mFY-6i-ZpM" secondAttribute="trailing" id="hhR-PE-duV"/>
+                                    <constraint firstItem="mFY-6i-ZpM" firstAttribute="top" secondItem="foH-kL-zsc" secondAttribute="top" id="tG7-u5-Pdc"/>
+                                    <constraint firstItem="mFY-6i-ZpM" firstAttribute="width" secondItem="foH-kL-zsc" secondAttribute="width" id="vFi-rY-lyl"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Wlw-qg-w7s" firstAttribute="leading" secondItem="NbB-3n-SAV" secondAttribute="leadingMargin" constant="8" id="0G4-Jd-FsW"/>
+                            <constraint firstItem="foH-kL-zsc" firstAttribute="leading" secondItem="NbB-3n-SAV" secondAttribute="leadingMargin" constant="10" id="JGj-Zi-GJB"/>
                             <constraint firstItem="Wlw-qg-w7s" firstAttribute="top" secondItem="JuB-bl-dGs" secondAttribute="bottom" constant="16" id="Lqn-Kl-luB"/>
+                            <constraint firstItem="foH-kL-zsc" firstAttribute="top" secondItem="Wlw-qg-w7s" secondAttribute="bottom" constant="17" id="PNz-8S-Jcl"/>
+                            <constraint firstItem="igf-jT-Wpf" firstAttribute="top" secondItem="foH-kL-zsc" secondAttribute="bottom" constant="20" id="SO6-U4-HMc"/>
                             <constraint firstItem="JuB-bl-dGs" firstAttribute="centerX" secondItem="NbB-3n-SAV" secondAttribute="centerX" id="TAW-mu-XL1"/>
                             <constraint firstItem="JuB-bl-dGs" firstAttribute="top" secondItem="NbB-3n-SAV" secondAttribute="top" id="Vhi-pv-Kbx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="foH-kL-zsc" secondAttribute="trailing" constant="10" id="sa2-9Z-wUb"/>
+                            <constraint firstItem="JuB-bl-dGs" firstAttribute="width" secondItem="NbB-3n-SAV" secondAttribute="width" id="zoM-mm-sWV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Vehicle Details" id="acm-uz-dUZ"/>
+                    <navigationItem key="navigationItem" title="Vehicle Details" id="acm-uz-dUZ">
+                        <barButtonItem key="backBarButtonItem" title="          " id="mUR-Hd-x5U"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="vehicleDetailImageView" destination="JuB-bl-dGs" id="JB7-U3-Cuf"/>
                         <outlet property="vehicleDetailTitleLabel" destination="Wlw-qg-w7s" id="9LR-Jf-gq1"/>
@@ -137,11 +165,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qv9-JG-tBg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vFp-MQ-GbU">
                                     <size key="itemSize" width="50" height="50"/>
@@ -198,7 +226,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="3CDF4539-0777-49BC-A86C-5B86F8A71404" width="2411" height="234">
+        <image name="CAEC49BB-5F6C-47A6-A8E8-D7A514466E80" width="2411" height="234">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -37865,8 +37893,8 @@ lQAieZ0AInmgACJ5pQAiebQAInm4ACJ5vwAieccAInnUACJ52QAiedsAInndACJ54gAieeoAInntACJ5
 8gAiefoAInn9ACJ6DwAiehIAInoXAAAAAAAABAEAAAAAAAAAQQAAAAAAAAAAAAAAAAAiehk
 </mutableData>
         </image>
-        <image name="Mercedes-AMG GT S" width="960" height="540"/>
-        <image name="Mercedes-AMG GT S_Detail" width="940" height="526"/>
+        <image name="Mercedes-AMG GT S" width="640" height="360"/>
+        <image name="Mercedes-AMG GT S_Detail" width="626" height="351"/>
         <image name="Settings" width="24" height="24"/>
     </resources>
 </document>

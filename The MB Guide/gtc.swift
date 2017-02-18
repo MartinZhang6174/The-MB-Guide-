@@ -10,6 +10,6 @@ import Foundation
 
 class gtc: MBVehicleModel {
     init() {
-        super.init(carName: "Mercedes-AMG GT C", aMG: true, horsepower: 550, convertible: true, hardTop: false, body: .roadster, klass: .GT)
+        super.init(carName: "Mercedes-AMG GT C Roadster", aMG: true, horsepower: 550, convertible: true, hardTop: false, body: .roadster, klass: .GT)
     }
 }
