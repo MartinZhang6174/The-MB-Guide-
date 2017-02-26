@@ -13,7 +13,7 @@ enum vehicleClassTitle {
 }
 
 enum vehicleBodyStyleEnum {
-    case coupe, sedan, wagen, sUV, roadster, van
+    case coupe, sedan, wagon, sUV, roadster, van
 }
 
 class MBVehicleModel: NSObject {

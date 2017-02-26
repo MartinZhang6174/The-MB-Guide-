@@ -19,6 +19,8 @@ class MBVehicleDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Bodoni 72 Smallcaps", size: 24)!]
 
         vehicleDetailImageView.image = UIImage(named: vehicleDetailImageName)
         vehicleDetailTitleLabel.text = vehicleDetailTitleText

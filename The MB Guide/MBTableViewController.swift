@@ -16,6 +16,9 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
     // Defining all Mercedes vehicles here
     var allMBVehicles: [MBVehicleModel] {
         
+        // A klass
+        let aKlass45Sedan = a45()
+        
         // C klass
         let cKlass63SSedan = c63ssedan()
         let cKlass63SCoupe = c63scoupe()
@@ -24,19 +27,32 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         let cKlass43Cab = c43cabriolet()
         let cKlass63SCab = c63scabriolet()
         
+        // E klass
+        let eKlass43Sedan = e43sedan()
+        let eKlass43Wagon = e43wagon()
+        let eKlass63Sedan = e63sedan()
+        let eklass63SSedan = e63ssedan()
+        
         // GT klass
         let gtKlassCoupe = gt()
+        let gtKlassRoadster = gtroadster()
         let gtKlassSCoupe = gts()
         let gtKlassRCoupe = gtr()
         let gtKlassCRoadster = gtc()
         
-        return [cKlass63SSedan,
+        return [aKlass45Sedan,
+                cKlass63SSedan,
                 cKlass63SCoupe,
                 cKlass43Sedan,
                 cKlass43Coupe,
                 cKlass43Cab,
                 cKlass63SCab,
+                eKlass43Sedan,
+                eKlass43Wagon,
+                eKlass63Sedan,
+                eklass63SSedan,
                 gtKlassCoupe,
+                gtKlassRoadster,
                 gtKlassSCoupe,
                 gtKlassRCoupe,
                 gtKlassCRoadster]
@@ -51,6 +67,7 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.tableView.backgroundColor = UIColor.black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Bodoni 72 Smallcaps", size: 24)!]
         
         
@@ -76,6 +93,7 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         }
         
         detailVC.vehicleDetailTitleText = cell.vehicleNameLabel.text!
+        
         let detailImage = UIImage(named: cell.vehicleNameLabel.text! + "_Detail")
         if detailImage == nil {
             detailVC.vehicleDetailImageName = cell.vehicleNameLabel.text!
@@ -83,7 +101,7 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
             detailVC.vehicleDetailImageName = cell.vehicleNameLabel.text! + "_Detail"
         }
         
-        detailVC.preferredContentSize = CGSize(width: 0.0, height: 450)
+        detailVC.preferredContentSize = CGSize(width: 0.0, height: 490)
         
         previewingContext.sourceRect = cell.frame
         
@@ -125,16 +143,14 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         cellBGView.backgroundColor = UIColor.darkGray
         
         let theMB = self.allMBVehicles[indexPath.row]
-
+        
         cell?.vehicleNameLabel.text = theMB.vehicleName
         cell?.vehicleImageView.image = UIImage(named: theMB.vehicleName)
         cell?.selectedBackgroundView = cellBGView
         
-        // Adding AMG badge onto vehicle image
+        // Adding AMG badge onto AMG vehicle cell
         if theMB.isAMGVehicle == true {
-            let amgImageView = UIImageView(image: #imageLiteral(resourceName: "Mercedes-AMG Logo"))
-            amgImageView.frame = CGRect(x: 20, y: 20, width: (cell?.vehicleImageView.frame.width)! * 0.270195, height: (cell?.vehicleImageView.frame.height)! * 0.046341)
-            cell?.vehicleImageView.addSubview(amgImageView)
+            cell?.badgeImageView.image = UIImage(named: "Mercedes-AMG Logo")
         }
         
         return cell!
