@@ -212,6 +212,7 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let selectedMB = allMBVehicles[indexPath.row]
                 
+                destVC.selectedVehicle = selectedMB
                 destVC.vehicleDetailTitleText = selectedMB.vehicleName
                 if UIImage(named: selectedMB.vehicleName + "_Detail") == nil {
                     destVC.vehicleDetailImageName = selectedMB.vehicleName
