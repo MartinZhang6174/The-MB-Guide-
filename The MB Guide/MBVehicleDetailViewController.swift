@@ -16,6 +16,7 @@ class MBVehicleDetailViewController: UIViewController {
     // Outlets for UI properties
     @IBOutlet weak var vehicleDetailImageView: UIImageView!
     @IBOutlet weak var vehicleDetailTitleLabel: UILabel!
+    @IBOutlet var vehicleDetailImageViewTapGestureRecognizer: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,9 @@ class MBVehicleDetailViewController: UIViewController {
 
         vehicleDetailImageView.image = UIImage(named: vehicleDetailImageName)
         vehicleDetailTitleLabel.text = vehicleDetailTitleText
-        // Do any additional setup after loading the view.
+
+        // UITouch Event sensitivity detection on imageView
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +35,9 @@ class MBVehicleDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func handleDetailImageViewForceTouch() {
+        print("Image tapped.")
+    }
 
     /*
     // MARK: - Navigation

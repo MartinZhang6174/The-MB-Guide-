@@ -10,6 +10,6 @@ import Foundation
 
 class c43coupe: MBVehicleModel {
     init() {
-        super.init(carName: "Mercedes-AMG C43 Coupe", aMG: true, horsepower: 362, convertible: false, hardTop: false, body: .coupe, klass: .C)
+        super.init(carName: "Mercedes-AMG C43 Coupe", aMG: true, weight: 1735, horsepower: 362, hpRPM: "5500-6000", torque: 520, torqRPM: "2000-4200", toHundred: 4.7, cylinder: 6, litre: 3.0, convertible: false, hardTop: false, consumption: 8.0, body: .coupe, klass: .C, driveTrain: .allWheelDrive, topSpeed: 250, price: "$55,500")
     }
 }

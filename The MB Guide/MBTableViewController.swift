@@ -26,6 +26,7 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         let cKlass43Coupe = c43coupe()
         let cKlass43Cab = c43cabriolet()
         let cKlass63SCab = c63scabriolet()
+        let cKlass63W204 = c63W204()
         
         // E klass
         let eKlass43Sedan = e43sedan()
@@ -47,6 +48,7 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
                 cKlass43Coupe,
                 cKlass43Cab,
                 cKlass63SCab,
+                cKlass63W204,
                 eKlass43Sedan,
                 eKlass43Wagon,
                 eKlass63Sedan,
@@ -69,7 +71,6 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         self.tableView.backgroundColor = UIColor.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Bodoni 72 Smallcaps", size: 24)!]
-        
         
         // MARK: 3D TOUCH
         if (traitCollection.forceTouchCapability == .available) {
@@ -110,7 +111,6 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
     
     // 3D Touch:Pop
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        
         show(viewControllerToCommit, sender: self)
     }
     
@@ -160,6 +160,10 @@ class MBTableViewController: UITableViewController, UIViewControllerPreviewingDe
         // Perform segue to destination view controller
         self.performSegue(withIdentifier: detailSegueID, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
     }
 
     /*

@@ -10,6 +10,6 @@ import Foundation
 
 class e43wagon: MBVehicleModel {
     init() {
-        super.init(carName: "Mercedes-AMG E43 4MATIC Wagon", aMG: true, horsepower: 396, convertible: false, hardTop: false, body: .wagon, klass: .E)
+        super.init(carName: "Mercedes-AMG E43 Estate", aMG: true, weight: 1930, horsepower: 401, hpRPM: "6100", torque: 520, torqRPM: "2500-5000", toHundred: 4.7, cylinder: 6, litre: 3.0, convertible: false, hardTop: false, consumption: 8.6, body: .wagon, klass: .E, driveTrain: .allWheelDrive, topSpeed: 250, price: "N/A")
     }
 }

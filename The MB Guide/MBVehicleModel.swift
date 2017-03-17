@@ -16,24 +16,50 @@ enum vehicleBodyStyleEnum {
     case coupe, sedan, wagon, sUV, roadster, van
 }
 
+enum vehicleDriveTrainEnum {
+    case frontWheelDrive, allWheelDrive, rearWheelDrive
+}
+
 class MBVehicleModel: NSObject {
 
-    var vehicleName: String
-    var horsepower: Int
-    var isAMGVehicle: Bool
-    var isConvertible: Bool
-    var isHardtopConvertible: Bool
-    var bodystyle: vehicleBodyStyleEnum
-    var classTitle: vehicleClassTitle
+    let vehicleName: String
+//    let vehicleDescription: String
+    let mSRP: String // A String value because there are can be commas and a range ----------->>>>>>>>> in USD!!!!
+    let weight: Int // Use kilograms
+    let horsepower: Int // Use EU horsepower since AMG website doesn't provide American ponnies (PS is the unit wanted)
+    let maxHorsepowerRPM: String // A String because there will sometimes be two values <<<<<<<
+    let torque: Int // Nm
+    let maxTorqueRPM: String // A String because there will sometimes be two values <<<<<<<
+    let engineCylinderNumber: Int
+    let engineLitreNumber: Double // Use litre
+    let isAMGVehicle: Bool
+    let zeroToHundredTime: Double
+    let isConvertible: Bool
+    let isHardtopConvertible: Bool
+    let fuelConsumption: Double // ----------------------->>>>>>>>>  LITRE PER 100 KM
+    let topSpeed: Int // In km/h; the speed to where the electronic limiter hits(no tunes)
+    let bodystyle: vehicleBodyStyleEnum
+    let classTitle: vehicleClassTitle
+    let driveTrain: vehicleDriveTrainEnum
     
-    init(carName: String, aMG: Bool, horsepower: Int, convertible: Bool, hardTop: Bool, body: vehicleBodyStyleEnum, klass: vehicleClassTitle) {
+    init(carName: String, aMG: Bool, weight: Int, horsepower: Int, hpRPM: String, torque: Int, torqRPM: String, toHundred: Double, cylinder: Int, litre: Double, convertible: Bool, hardTop: Bool, consumption: Double, body: vehicleBodyStyleEnum, klass: vehicleClassTitle, driveTrain: vehicleDriveTrainEnum, topSpeed: Int, price: String) {
         self.vehicleName = carName
-        self.isAMGVehicle = aMG
+        self.weight = weight
         self.horsepower = horsepower
+        self.maxHorsepowerRPM = hpRPM
+        self.torque = torque
+        self.maxTorqueRPM = torqRPM
+        self.engineCylinderNumber = cylinder
+        self.engineLitreNumber = litre
+        self.isAMGVehicle = aMG
+        self.zeroToHundredTime = toHundred
         self.isConvertible = convertible
         self.isHardtopConvertible = hardTop
+        self.fuelConsumption = consumption
         self.bodystyle = body
         self.classTitle = klass
+        self.driveTrain = driveTrain
+        self.topSpeed = topSpeed
+        self.mSRP = price
     }
-    
 }

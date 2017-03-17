@@ -11,6 +11,6 @@ import UIKit
 
 class c63scoupe: MBVehicleModel {
     init() {
-        super.init(carName: "Mercedes-AMG C63 S Coupe", aMG: true, horsepower: 503, convertible: false, hardTop: false, body: .coupe, klass: .C)
+        super.init(carName: "Mercedes-AMG C63 S Coupe", aMG: true, weight: 1800, horsepower: 510, hpRPM: "5500-6250", torque: 700, torqRPM: "1750-4500", toHundred: 3.9, cylinder: 8, litre: 4.0, convertible: false, hardTop: false, consumption: 8.9, body: .coupe, klass: .C, driveTrain: .rearWheelDrive, topSpeed: 290, price: "$75,000")
     }
 }

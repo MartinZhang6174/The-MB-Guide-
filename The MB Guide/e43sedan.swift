@@ -10,6 +10,6 @@ import Foundation
 
 class e43sedan: MBVehicleModel {
     init() {
-        super.init(carName: "Mercedes-AMG E43 4MATIC Sedan", aMG: true, horsepower: 396, convertible: false, hardTop: false, body: .sedan, klass: .E)
+        super.init(carName: "Mercedes-AMG E43 Sedan", aMG: true, weight: 1765, horsepower: 401, hpRPM: "6100", torque: 520, torqRPM: "2500-5000", toHundred: 4.6, cylinder: 6, litre: 3.0, convertible: false, hardTop: false, consumption: 8.4, body: .sedan, klass: .E, driveTrain: .allWheelDrive, topSpeed: 250, price: "$72,400")
     }
 }
