@@ -39,7 +39,7 @@
                                                 <constraint firstAttribute="width" constant="359" id="oWi-t6-3zq"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5814203F-78D6-4DA8-BC86-5B112D193D12" translatesAutoresizingMaskIntoConstraints="NO" id="tI3-HK-xE6">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8B676E4A-C90F-45D7-92D6-B41E00FC52CD" translatesAutoresizingMaskIntoConstraints="NO" id="tI3-HK-xE6">
                                             <rect key="frame" x="23" y="57" width="104" height="14"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="104" id="4gW-r7-gIu"/>
@@ -100,6 +100,7 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8VZ-Bj-rpn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="375" id="ZZI-hc-4JK"/>
                                 </constraints>
@@ -156,12 +157,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mainScrollView" destination="8VZ-Bj-rpn" id="4n0-29-dwp"/>
-                        <outlet property="vehicleDetailImageViewTapGestureRecognizer" destination="H6m-8g-mhV" id="HB6-s1-TO9"/>
                         <outlet property="vehicleDetailTitleLabel" destination="Wlw-qg-w7s" id="9LR-Jf-gq1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="re4-VO-9Rm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="H6m-8g-mhV"/>
             </objects>
             <point key="canvasLocation" x="1712.8" y="-639.13043478260875"/>
         </scene>
@@ -235,7 +234,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="5814203F-78D6-4DA8-BC86-5B112D193D12" width="2411" height="234">
+        <image name="8B676E4A-C90F-45D7-92D6-B41E00FC52CD" width="2411" height="234">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

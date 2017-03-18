@@ -8,25 +8,31 @@
 
 import UIKit
 
+var numberOfDetailVCsInHeap = 0
+
 class MBVehicleDetailViewController: UIViewController {
     
     var selectedVehicle: MBVehicleModel?
     var vehicleDetailImageName: String = ""
     var vehicleDetailTitleText: String = ""
+    var tapGestureRecognizer = UITapGestureRecognizer()
     
     // Outlets for UI properties
     @IBOutlet weak var mainScrollView: UIScrollView!
-    //    @IBOutlet weak var vehicleDetailImageView: UIImageView!
     @IBOutlet weak var vehicleDetailTitleLabel: UILabel!
-    @IBOutlet var vehicleDetailImageViewTapGestureRecognizer: UITapGestureRecognizer!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print(vehicleDetailImageName)
         
+        vehicleDetailTitleLabel.text = vehicleDetailTitleText
+        
         mainScrollView.frame = self.view.frame
-        mainScrollView.backgroundColor = UIColor.black
+        mainScrollView.backgroundColor = UIColor.darkGray
+        
+        tapGestureRecognizer.addTarget(self.mainScrollView, action: #selector(handleTouchOnImageScrollView))
+//        tapGestureRecognizer? = UIGestureRecognizer(target: self, action: #selector(handleTouchOnImageScrollView)) as! UITapGestureRecognizer
         
         // Initialize image array
         var vehicleDetailImagesArray: Array = [UIImage]()
@@ -56,29 +62,43 @@ class MBVehicleDetailViewController: UIViewController {
             mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i + 1)
             mainScrollView.contentSize.height = imageView.frame.height
             mainScrollView.addSubview(imageView)
+            
+            mainScrollView.addGestureRecognizer(tapGestureRecognizer)
         }
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Bodoni 72 Smallcaps", size: 24)!]
         
-        //        vehicleDetailImageView.image = UIImage(named: vehicleDetailImageName)
-        vehicleDetailTitleLabel.text = vehicleDetailTitleText
         
-        // UITouch Event sensitivity detection on imageView
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDetailImageViewForceTouch))
-        tapRecognizer.numberOfTapsRequired = 1
+        //        self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleScrollViewTouchEvent))
+        //        tapGestureRecognizer?.numberOfTapsRequired = 1
+        //        self.mainScrollView.addGestureRecognizer(tapGestureRecognizer!)
         
-        //        vehicleDetailImageView.isUserInteractionEnabled = true
-        //        vehicleDetailImageView.addGestureRecognizer(tapRecognizer)
+        // Code to check for potential ARC issue
+        numberOfDetailVCsInHeap += 1
+        print("<<<<<<<<<<<<<<<<<<<<<<<<<<\(numberOfDetailVCsInHeap)DetailVCs in heap.")
+        
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // Code to check for potential ARC issue
+    deinit {
+        numberOfDetailVCsInHeap -= 1
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>>\(numberOfDetailVCsInHeap)DetailVCs in heap.")
     }
     
-    func handleDetailImageViewForceTouch() {
-        print("The \(selectedVehicle?.vehicleName) has an astonishing \(selectedVehicle?.horsepower)bhp, a competitive number within its class.")
+    ////    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    ////        guard let touch = touches.first else { return }
+    ////        print(touch.force)
+    ////    }
+    //
+    //    func handleScrollViewTouchEvent() {
+    //        print("touch happened.")
+    //            self.mainScrollView.isHidden = true
+    //    }
+    
+    func handleTouchOnImageScrollView() {
+        print(">>>>>>>>>>>>>>>>>>>>>")
     }
+    
     
     /*
      // MARK: - Navigation
