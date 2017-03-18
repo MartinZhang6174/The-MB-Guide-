@@ -8,8 +8,6 @@
 
 import UIKit
 
-var numberOfDetailVCsInHeap = 0
-
 class MBVehicleDetailViewController: UIViewController {
     
     var selectedVehicle: MBVehicleModel?
@@ -17,10 +15,12 @@ class MBVehicleDetailViewController: UIViewController {
     var vehicleDetailTitleText: String = ""
     var tapGestureRecognizer = UITapGestureRecognizer()
     
+    var imageAlphaReduced = false
+    
     // Outlets for UI properties
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var vehicleDetailTitleLabel: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,8 +31,9 @@ class MBVehicleDetailViewController: UIViewController {
         mainScrollView.frame = self.view.frame
         mainScrollView.backgroundColor = UIColor.darkGray
         
-        tapGestureRecognizer.addTarget(self.mainScrollView, action: #selector(handleTouchOnImageScrollView))
-//        tapGestureRecognizer? = UIGestureRecognizer(target: self, action: #selector(handleTouchOnImageScrollView)) as! UITapGestureRecognizer
+        tapGestureRecognizer.addTarget(self, action: #selector(handleTouchOnImageScrollView))
+        tapGestureRecognizer.numberOfTouchesRequired = 1
+//        tapGestureRecognizer? = UIGestureRecognizer(target: self, action: #selector(handleTouchOnImageScrollView)) as! UITapGestureRecognizer 
         
         // Initialize image array
         var vehicleDetailImagesArray: Array = [UIImage]()
@@ -58,6 +59,8 @@ class MBVehicleDetailViewController: UIViewController {
             let xPosition = self.view.frame.width * CGFloat(i)
             imageView.frame = CGRect(x: xPosition, y: 0, width: self.view.frame.width, height: 375)
             imageView.clipsToBounds = true
+            imageView.isUserInteractionEnabled = true
+            imageView.addGestureRecognizer(tapGestureRecognizer)
             
             mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i + 1)
             mainScrollView.contentSize.height = imageView.frame.height
@@ -73,16 +76,6 @@ class MBVehicleDetailViewController: UIViewController {
         //        tapGestureRecognizer?.numberOfTapsRequired = 1
         //        self.mainScrollView.addGestureRecognizer(tapGestureRecognizer!)
         
-        // Code to check for potential ARC issue
-        numberOfDetailVCsInHeap += 1
-        print("<<<<<<<<<<<<<<<<<<<<<<<<<<\(numberOfDetailVCsInHeap)DetailVCs in heap.")
-        
-    }
-    
-    // Code to check for potential ARC issue
-    deinit {
-        numberOfDetailVCsInHeap -= 1
-        print(">>>>>>>>>>>>>>>>>>>>>>>>>>\(numberOfDetailVCsInHeap)DetailVCs in heap.")
     }
     
     ////    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -96,7 +89,21 @@ class MBVehicleDetailViewController: UIViewController {
     //    }
     
     func handleTouchOnImageScrollView() {
-        print(">>>>>>>>>>>>>>>>>>>>>")
+        print("Image touched once.")
+        if !self.imageAlphaReduced {
+            imageAlphaReduced = true
+            mainScrollView.alpha = 0.1
+            mainScrollView.isScrollEnabled = false
+        } else {
+            imageAlphaReduced = false
+            mainScrollView.alpha = 1.0
+            mainScrollView.isScrollEnabled = true
+        }
+        
+//        if self.mainScrollView.alpha > 1 {
+//            self.mainScrollView.alpha = 1
+//            print(self.mainScrollView.alpha)
+//        }
     }
     
     
