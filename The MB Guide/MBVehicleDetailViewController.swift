@@ -100,10 +100,6 @@ class MBVehicleDetailViewController: UIViewController {
             mainScrollView.isScrollEnabled = true
         }
         
-//        if self.mainScrollView.alpha > 1 {
-//            self.mainScrollView.alpha = 1
-//            print(self.mainScrollView.alpha)
-//        }
     }
     
     
