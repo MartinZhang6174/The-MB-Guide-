@@ -74,18 +74,21 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
         
         // MARK: - 3D TOUCH  (checking user device force touch capability)
         if (traitCollection.forceTouchCapability == .available) {
-            registerForPreviewing(with: self, sourceView: view)
+            
+            // HERE I ENCOUNTERED THE MOST UNBELIEVABLE ERROR:
+            // I DIDN'T REALIZE THAT MY PREVIOUS VC FILE WAS FOR A UITABLEVIEWCONTROLLER INSTEAD OF A NORMAL VC; I FORGOT TO CHANGE THE SOURCEVIEW OF PREVIEWING TO THE TABLE VIEW INSTEAD OF THE MAIN VIEW
+            registerForPreviewing(with: self, sourceView: self.mbTableView)
         }
     }
     
     // 3D Touch: Peek
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        guard let indexPath = mbTableView.indexPathForRow(at: location) else {
+        guard let indexPath = self.mbTableView.indexPathForRow(at: location) else {
             return nil
         }
         print(self.allMBVehicles[indexPath.row])
         
-        guard let cell = mbTableView.cellForRow(at: indexPath) as? MBMainTableViewCell else {
+        guard let cell = self.mbTableView.cellForRow(at: indexPath) as? MBMainTableViewCell else {
             return nil
         }
         
@@ -145,19 +148,15 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        print(allMBVehicles[indexPath.row])
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: detailSegueID, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    
-    
-    
-    
-    
-    
-
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

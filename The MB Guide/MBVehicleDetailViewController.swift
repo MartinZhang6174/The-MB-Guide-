@@ -24,7 +24,7 @@ class MBVehicleDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(vehicleDetailImageName)
+        // print(vehicleDetailImageName)
         
         vehicleDetailTitleLabel.text = vehicleDetailTitleText
         
