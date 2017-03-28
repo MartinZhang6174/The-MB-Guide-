@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fcw-YH-0ti">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rTA-aq-4N3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mBCell" rowHeight="256" id="u81-f8-wph" customClass="MBTableViewCell" customModule="The_MB_Guide" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="256"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mBCell" rowHeight="255" id="u81-f8-wph" customClass="MBTableViewCell" customModule="The_MB_Guide" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="255"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u81-f8-wph" id="FFt-Z5-8eB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="254"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercedes-AMG GT S Coupe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2N-Fx-gSf">
@@ -39,7 +39,7 @@
                                                 <constraint firstAttribute="width" constant="359" id="oWi-t6-3zq"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8B676E4A-C90F-45D7-92D6-B41E00FC52CD" translatesAutoresizingMaskIntoConstraints="NO" id="tI3-HK-xE6">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3F83C1C7-7D3C-44A5-973D-56F8774AAD36" translatesAutoresizingMaskIntoConstraints="NO" id="tI3-HK-xE6">
                                             <rect key="frame" x="23" y="57" width="104" height="14"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="104" id="4gW-r7-gIu"/>
@@ -74,13 +74,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="The MB Guide" id="yMX-Au-L2W">
                         <barButtonItem key="backBarButtonItem" title="          " id="6nG-85-m7u"/>
-                        <barButtonItem key="rightBarButtonItem" image="Settings" style="plain" id="IFc-QF-dGB">
+                        <barButtonItem key="leftBarButtonItem" image="Settings" style="plain" id="IFc-QF-dGB">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="vvt-yJ-tbk" kind="show" identifier="presentVehicleDetailViewControllerSegue" id="AIO-nY-UVs"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjj-qY-Om2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,7 +116,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <mutableString key="content">The Mercedes-AMG GT S freatures the AMG M178 4.0 litre twin-turbo charged V8 engine. According to AMG, the GT S is capable of reaching 60 mph in 3.8 seconds; however, tests have proven that the GT S can easily break the official claim and reach 60 mph in just 3.0 seconds. The Mercedes-AMG GT S freatures the AMG M178 4.0 litre twin-turbo charged V8 engine. According to AMG, the GT S is capable of reaching 60 mph in 3.8 seconds; however, tests have proven that the GT S can easily break that claim and reach 60 mph in just 3.0 seconds.The Mercedes-AMG GT S freatures the AMG M178 4.0 litre twin-turbo charged V8 engine. According to AMG, the GT S is capable of reaching 60 mph in 3.8 seconds; however, tests have proven that the GT S can easily break that claim and reach 60 mph in just 3.0 seconds.</mutableString>
+                                                <string key="content">The Mercedes-AMG GT S freatures the AMG M178 4.0 litre twin-turbo charged V8 engine. According to AMG, the GT S is capable of reaching 60 mph in 3.8 seconds; however, tests have proven that the GT S can easily break the official claim and reach 60 mph in just 3.0 seconds. The Mercedes-AMG GT S freatures the AMG M178 4.0 litre twin-turbo charged V8 engine. According to AMG, the GT S is capable of reaching 60 mph in 3.8 seconds; however, tests have proven that the GT S can easily break that claim and reach 60 mph in just 3.0 seconds.The Mercedes-AMG GT S freatures the AMG M178 4.0 litre twin-turbo charged V8 engine. According to AMG, the GT S is capable of reaching 60 mph in 3.8 seconds; however, tests have proven that the GT S can easily break that claim and reach 60 mph in just 3.0 seconds.</string>
                                                 <attributes>
                                                     <font key="NSFont" size="14" name="SFUIText-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -163,6 +160,92 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="re4-VO-9Rm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1712.8" y="-639.13043478260875"/>
+        </scene>
+        <!--The MB Guide-->
+        <scene sceneID="GHd-qU-n5I">
+            <objects>
+                <viewController id="ybM-8y-gWX" customClass="MBViewControllerWithMainTableView" customModule="The_MB_Guide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FVx-3N-oW2"/>
+                        <viewControllerLayoutGuide type="bottom" id="BPs-oK-kns"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gkL-B0-Cby">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="245" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rxh-bY-isM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mbCell" rowHeight="255" id="dWe-54-N7d" customClass="MBMainTableViewCell" customModule="The_MB_Guide" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="255"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dWe-54-N7d" id="BZT-o3-Jpo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="254"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mercedes-AMG GT S" translatesAutoresizingMaskIntoConstraints="NO" id="PfS-P0-jEg">
+                                                    <rect key="frame" x="8" y="42.5" width="359" height="205"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="205" id="4rg-43-67I"/>
+                                                        <constraint firstAttribute="width" constant="359" id="exs-0b-fkt"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mercedes-AMG Logo" translatesAutoresizingMaskIntoConstraints="NO" id="IdI-0E-dCz">
+                                                    <rect key="frame" x="23" y="57.5" width="104" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="584-ji-zBg"/>
+                                                        <constraint firstAttribute="width" constant="104" id="t5O-Ks-RAW"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercedes-AMG GT S Coupe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0B-o4-OGJ">
+                                                    <rect key="frame" x="8" y="8" width="359" height="22"/>
+                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="18"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PfS-P0-jEg" firstAttribute="top" secondItem="O0B-o4-OGJ" secondAttribute="bottom" constant="12.5" id="0Uv-Uj-vCh"/>
+                                                <constraint firstItem="O0B-o4-OGJ" firstAttribute="leading" secondItem="BZT-o3-Jpo" secondAttribute="leadingMargin" id="7bk-K3-C3F"/>
+                                                <constraint firstItem="IdI-0E-dCz" firstAttribute="leading" secondItem="PfS-P0-jEg" secondAttribute="leading" constant="15" id="TKG-HO-DNT"/>
+                                                <constraint firstItem="PfS-P0-jEg" firstAttribute="centerX" secondItem="BZT-o3-Jpo" secondAttribute="centerX" id="XCB-Ua-n3m"/>
+                                                <constraint firstItem="O0B-o4-OGJ" firstAttribute="top" secondItem="BZT-o3-Jpo" secondAttribute="topMargin" id="XRB-Hf-82h"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="O0B-o4-OGJ" secondAttribute="trailing" id="x6Q-Yv-neU"/>
+                                                <constraint firstItem="IdI-0E-dCz" firstAttribute="top" secondItem="PfS-P0-jEg" secondAttribute="top" constant="15" id="y4w-15-TPV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <connections>
+                                            <outlet property="cellAMGLogoView" destination="IdI-0E-dCz" id="yi1-Rd-3Rt"/>
+                                            <outlet property="cellImageView" destination="PfS-P0-jEg" id="BjZ-7X-se9"/>
+                                            <outlet property="cellVehicleTitleLabel" destination="O0B-o4-OGJ" id="mhd-J4-107"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BPs-oK-kns" firstAttribute="top" secondItem="Rxh-bY-isM" secondAttribute="bottom" id="98F-3C-roI"/>
+                            <constraint firstItem="Rxh-bY-isM" firstAttribute="top" secondItem="FVx-3N-oW2" secondAttribute="bottom" id="M60-rD-qGA"/>
+                            <constraint firstItem="Rxh-bY-isM" firstAttribute="leading" secondItem="gkL-B0-Cby" secondAttribute="leading" id="nPq-ib-p9y"/>
+                            <constraint firstAttribute="trailing" secondItem="Rxh-bY-isM" secondAttribute="trailing" id="slv-hG-18T"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="The MB Guide" id="FXM-Mf-BG5">
+                        <barButtonItem key="leftBarButtonItem" image="Settings" id="2Fq-24-cM0">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mbTableView" destination="Rxh-bY-isM" id="RGA-wd-pRa"/>
+                        <segue destination="vvt-yJ-tbk" kind="show" identifier="presentVehicleDetailViewControllerSegue" id="e52-ge-3H9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lrq-Oc-rCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2124" y="103.89805097451276"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -218,7 +301,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fcw-YH-0ti" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Pfk-gz-uIL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="Pfk-gz-uIL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -232,9 +315,28 @@
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="-639.13043478260875"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zON-b4-fsY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rTA-aq-4N3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="axP-TL-eud">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ybM-8y-gWX" kind="relationship" relationship="rootViewController" id="WIU-EJ-pCe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FVX-5j-qlt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1184.8" y="103.89805097451276"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="8B676E4A-C90F-45D7-92D6-B41E00FC52CD" width="2411" height="234">
+        <image name="3F83C1C7-7D3C-44A5-973D-56F8774AAD36" width="2411" height="234">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -37902,6 +38004,7 @@ lQAieZ0AInmgACJ5pQAiebQAInm4ACJ5vwAieccAInnUACJ52QAiedsAInndACJ54gAieeoAInntACJ5
 </mutableData>
         </image>
         <image name="Mercedes-AMG GT S" width="960" height="540"/>
+        <image name="Mercedes-AMG Logo" width="2411" height="234"/>
         <image name="Settings" width="24" height="24"/>
     </resources>
 </document>

@@ -1,14 +1,16 @@
 //
-//  MBTableViewController.swift
+//  MBViewControllerWithMainTableView.swift
 //  The MB Guide
 //
-//  Created by Martin Zhang on 2016-12-20.
-//  Copyright © 2016 Martin Zhang. All rights reserved.
+//  Created by Martin Zhang on 2017-03-27.
+//  Copyright © 2017 Martin Zhang. All rights reserved.
 //
 
 import UIKit
 
-class MBTableViewController: UITableViewController {
+class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
+
+    @IBOutlet weak var mbTableView: UITableView!
     
     // MARK: Segue Identifier
     let detailSegueID = "presentVehicleDetailViewControllerSegue"
@@ -63,28 +65,27 @@ class MBTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        self.tableView.backgroundColor = UIColor.black
+        self.mbTableView.delegate = self
+        self.mbTableView.dataSource = self
+
+        self.mbTableView.backgroundColor = UIColor.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Bodoni 72 Smallcaps", size: 24)!]
         
-        // MARK: 3D TOUCH
-       // if (traitCollection.forceTouchCapability == .available) {
-         //   registerForPreviewing(with: self, sourceView: view)
-        // }
+        // MARK: - 3D TOUCH  (checking user device force touch capability)
+        if (traitCollection.forceTouchCapability == .available) {
+            registerForPreviewing(with: self, sourceView: view)
+        }
     }
-    /*
+    
     // 3D Touch: Peek
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        guard let indexPath = tableView.indexPathForRow(at: location) else {
+        guard let indexPath = mbTableView.indexPathForRow(at: location) else {
             return nil
         }
+        print(self.allMBVehicles[indexPath.row])
         
-        guard let cell = tableView.cellForRow(at: indexPath) as? MBTableViewCell else {
+        guard let cell = mbTableView.cellForRow(at: indexPath) as? MBMainTableViewCell else {
             return nil
         }
         
@@ -92,13 +93,14 @@ class MBTableViewController: UITableViewController {
             return nil
         }
         
-        detailVC.vehicleDetailTitleText = cell.vehicleNameLabel.text!
+        print("\(cell.cellVehicleTitleLabel.text)")
+        detailVC.vehicleDetailTitleText = cell.cellVehicleTitleLabel.text!
         
-        let detailImage = UIImage(named: cell.vehicleNameLabel.text! + "_Detail")
+        let detailImage = UIImage(named: cell.cellVehicleTitleLabel.text! + "_Detail")
         if detailImage == nil {
-            detailVC.vehicleDetailImageName = cell.vehicleNameLabel.text!
+            detailVC.vehicleDetailImageName = cell.cellVehicleTitleLabel.text!
         } else {
-            detailVC.vehicleDetailImageName = cell.vehicleNameLabel.text! + "_Detail"
+            detailVC.vehicleDetailImageName = cell.cellVehicleTitleLabel.text! + "_Detail"
         }
         
         detailVC.preferredContentSize = CGSize(width: 0.0, height: 490)
@@ -107,108 +109,63 @@ class MBTableViewController: UITableViewController {
         
         return detailVC
     }
+    
     // 3D Touch:Pop
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         show(viewControllerToCommit, sender: self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
+    // MARK: - TableView Delegate & DataSource
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-     */
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.allMBVehicles.count
     }
     
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "mBCell", for: indexPath) as? MBTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.mbTableView.dequeueReusableCell(withIdentifier: "mbCell", for: indexPath) as? MBMainTableViewCell
         
         let cellBGView = UIView()
         cellBGView.backgroundColor = UIColor.darkGray
         
         let theMB = self.allMBVehicles[indexPath.row]
         
-        cell?.vehicleNameLabel.text = theMB.vehicleName
-        cell?.vehicleImageView.image = UIImage(named: theMB.vehicleName)
+        cell?.cellVehicleTitleLabel.text = theMB.vehicleName
+        cell?.cellImageView.image = UIImage(named: theMB.vehicleName)
         cell?.selectedBackgroundView = cellBGView
         
         // Adding AMG badge onto AMG vehicle cell
         if theMB.isAMGVehicle == true {
-            cell?.badgeImageView.image = UIImage(named: "Mercedes-AMG Logo")
+            cell?.cellAMGLogoView.image = UIImage(named: "Mercedes-AMG Logo")
         }
         
         return cell!
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Perform segue to destination view controller
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: detailSegueID, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-    }
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
     
     
+    
+    
+    
+    
+
+
     // MARK: - Navigation
-    
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Pass the selected object to the new view controller.
         
         if segue.identifier == detailSegueID {
             let destVC = segue.destination as! MBVehicleDetailViewController
-            if let indexPath = self.tableView.indexPathForSelectedRow {
+            if let indexPath = self.mbTableView.indexPathForSelectedRow {
                 let selectedMB = allMBVehicles[indexPath.row]
                 
                 destVC.selectedVehicle = selectedMB
@@ -221,6 +178,5 @@ class MBTableViewController: UITableViewController {
             }
         }
     }
-    
-    
+
 }
