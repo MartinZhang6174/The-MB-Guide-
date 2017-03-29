@@ -9,8 +9,13 @@
 import UIKit
 
 class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
-
+    
     @IBOutlet weak var mbTableView: UITableView!
+    @IBOutlet weak var navigationBarLeftSettingButton: UIBarButtonItem!
+    @IBOutlet weak var sideMenuBlurVisualEffectView: UIVisualEffectView!
+    @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
+    
+    var menuShowing = false
     
     // MARK: Segue Identifier
     let detailSegueID = "presentVehicleDetailViewControllerSegue"
@@ -67,10 +72,14 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
         
         self.mbTableView.delegate = self
         self.mbTableView.dataSource = self
-
+        
         self.mbTableView.backgroundColor = UIColor.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Bodoni 72 Smallcaps", size: 24)!]
+        
+        self.sideMenuLeadingConstraint.constant = -170
+        
+        // sideMenuBlurVisualEffectView.layer.shadowOpacity = 1
         
         // MARK: - 3D TOUCH  (checking user device force touch capability)
         if (traitCollection.forceTouchCapability == .available) {
@@ -83,6 +92,12 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
     
     // 3D Touch: Peek
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        if menuShowing {
+            dismissSideMenu()
+        }
+        menuShowing = false
+        
         guard let indexPath = self.mbTableView.indexPathForRow(at: location) else {
             return nil
         }
@@ -116,6 +131,11 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
     // 3D Touch:Pop
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         show(viewControllerToCommit, sender: self)
+        
+        if menuShowing {
+            dismissSideMenu()
+        }
+        menuShowing = false
     }
     
     // MARK: - TableView Delegate & DataSource
@@ -148,17 +168,51 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
         return cell!
     }
     
-    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        print(allMBVehicles[indexPath.row])
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: detailSegueID, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if menuShowing {
+            dismissSideMenu()
+        }
+        menuShowing = false
+    }
+    
+    @IBAction func settingsButtonPressed(_ sender: Any) {
+        if menuShowing != false {
+            sideMenuLeadingConstraint.constant = -170
+            
+            dismissSideMenu()
+           /* UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 20.0, options: .curveEaseInOut, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil) */
+        } else {
+            self.sideMenuLeadingConstraint.constant = 0
+            
+            // Animating sliding menu
+            UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 20.0, options: .curveEaseInOut, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
+        menuShowing = !menuShowing
+    }
+    
+    func dismissSideMenu() {
+        sideMenuLeadingConstraint.constant = -170
+        
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 20.0, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+        print("Dismissing--------------------------------->>>>>>>>>>>>>/nMenu Status: \(menuShowing)")
+    }
+    
+    func animateSideMenu(menuInOut inOut: Bool) {
+        
     }
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -177,5 +231,5 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
             }
         }
     }
-
+    
 }
