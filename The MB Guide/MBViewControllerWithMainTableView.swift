@@ -14,6 +14,8 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
     @IBOutlet weak var navigationBarLeftSettingButton: UIBarButtonItem!
     @IBOutlet weak var sideMenuBlurVisualEffectView: UIVisualEffectView!
     @IBOutlet weak var sideMenuLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var sideMenuCreditsButton: UIButton!
+    @IBOutlet weak var sideMenuRateButton: UIButton!
     
     var menuShowing = false
     
@@ -76,6 +78,12 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
         self.mbTableView.backgroundColor = UIColor.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Bodoni 72 Smallcaps", size: 24)!]
+        
+        self.sideMenuCreditsButton.layer.cornerRadius = 5.0
+        
+        self.sideMenuCreditsButton.layer.shadowOpacity = 1.0
+        self.sideMenuCreditsButton.layer.shadowRadius = 1.0
+        self.sideMenuCreditsButton.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         
         self.sideMenuLeadingConstraint.constant = -170
         
@@ -183,9 +191,9 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
             sideMenuLeadingConstraint.constant = -170
             
             dismissSideMenu()
-           /* UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 20.0, options: .curveEaseInOut, animations: {
-                self.view.layoutIfNeeded()
-            }, completion: nil) */
+            /* UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 20.0, options: .curveEaseInOut, animations: {
+             self.view.layoutIfNeeded()
+             }, completion: nil) */
         } else {
             self.sideMenuLeadingConstraint.constant = 0
             
@@ -203,8 +211,6 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 20.0, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
-        
-        print("Dismissing--------------------------------->>>>>>>>>>>>>/nMenu Status: \(menuShowing)")
     }
     
     func animateSideMenu(menuInOut inOut: Bool) {

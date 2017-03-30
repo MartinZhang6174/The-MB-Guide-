@@ -112,14 +112,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mercedes-AMG GT S" translatesAutoresizingMaskIntoConstraints="NO" id="PfS-P0-jEg">
-                                                    <rect key="frame" x="8" y="42.5" width="359" height="205"/>
+                                                    <rect key="frame" x="8" y="43" width="359" height="205"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="205" id="4rg-43-67I"/>
                                                         <constraint firstAttribute="width" constant="359" id="exs-0b-fkt"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mercedes-AMG Logo" translatesAutoresizingMaskIntoConstraints="NO" id="IdI-0E-dCz">
-                                                    <rect key="frame" x="23" y="57.5" width="104" height="14"/>
+                                                    <rect key="frame" x="23" y="58" width="104" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="584-ji-zBg"/>
                                                         <constraint firstAttribute="width" constant="104" id="t5O-Ks-RAW"/>
@@ -158,10 +158,8 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vq2-9d-pJu">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="603"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="4lh-Nj-qeu">
-                                                <rect key="frame" x="0.0" y="0.0" width="170" height="603"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -169,15 +167,37 @@
                                             </vibrancyEffect>
                                         </visualEffectView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1J-9v-QTp">
-                                            <rect key="frame" x="48" y="27" width="73.5" height="20.5"/>
-                                            <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
+                                            <rect key="frame" x="42" y="17" width="87" height="25"/>
+                                            <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3M-zS-317">
+                                            <rect key="frame" x="19.5" y="62" width="131" height="33"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
+                                            <size key="titleShadowOffset" width="2" height="2"/>
+                                            <state key="normal" title="  Developer Credits  ">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGt-8r-Bcv">
+                                            <rect key="frame" x="31.5" y="115" width="107" height="33"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
+                                            <size key="titleShadowOffset" width="2" height="2"/>
+                                            <state key="normal" title="  Rate The App!  ">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="f1J-9v-QTp" firstAttribute="top" secondItem="qOc-Q0-Qon" secondAttribute="top" constant="27" id="Anx-WF-qZL"/>
+                                        <constraint firstItem="f1J-9v-QTp" firstAttribute="top" secondItem="qOc-Q0-Qon" secondAttribute="top" constant="17" id="Anx-WF-qZL"/>
                                         <constraint firstItem="f1J-9v-QTp" firstAttribute="centerX" secondItem="qOc-Q0-Qon" secondAttribute="centerX" id="H60-gi-rGg"/>
+                                        <constraint firstItem="EGt-8r-Bcv" firstAttribute="top" secondItem="Q3M-zS-317" secondAttribute="bottom" constant="20" id="fFR-HC-Kl4"/>
+                                        <constraint firstItem="EGt-8r-Bcv" firstAttribute="centerX" secondItem="qOc-Q0-Qon" secondAttribute="centerX" id="fO7-ad-bAp"/>
+                                        <constraint firstItem="Q3M-zS-317" firstAttribute="centerX" secondItem="qOc-Q0-Qon" secondAttribute="centerX" id="fsx-lT-Gj8"/>
+                                        <constraint firstItem="Q3M-zS-317" firstAttribute="top" secondItem="f1J-9v-QTp" secondAttribute="bottom" constant="20" id="mSn-cg-zhX"/>
                                     </constraints>
                                 </view>
                                 <constraints>
@@ -209,7 +229,9 @@
                         <outlet property="mbTableView" destination="Rxh-bY-isM" id="RGA-wd-pRa"/>
                         <outlet property="navigationBarLeftSettingButton" destination="2Fq-24-cM0" id="88H-UA-0Ng"/>
                         <outlet property="sideMenuBlurVisualEffectView" destination="RBf-GH-8dT" id="ybQ-Rd-bGo"/>
+                        <outlet property="sideMenuCreditsButton" destination="EGt-8r-Bcv" id="TLW-Kv-pwn"/>
                         <outlet property="sideMenuLeadingConstraint" destination="osL-uz-Dme" id="PyD-Qs-ZW3"/>
+                        <outlet property="sideMenuRateButton" destination="EGt-8r-Bcv" id="b4b-dm-6Te"/>
                         <segue destination="vvt-yJ-tbk" kind="show" identifier="presentVehicleDetailViewControllerSegue" id="e52-ge-3H9"/>
                     </connections>
                 </viewController>
