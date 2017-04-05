@@ -19,6 +19,8 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
     
     var menuShowing = false
     
+    var sideMenuButtonsArray = [UIButton]()
+    
     // MARK: Segue Identifier
     let detailSegueID = "presentVehicleDetailViewControllerSegue"
     
@@ -79,15 +81,12 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "Bodoni 72 Smallcaps", size: 24)!]
         
-        self.sideMenuCreditsButton.layer.cornerRadius = 5.0
-        
-        self.sideMenuCreditsButton.layer.shadowOpacity = 1.0
-        self.sideMenuCreditsButton.layer.shadowRadius = 1.0
-        self.sideMenuCreditsButton.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        
+        // Adding side menu UIButtons to array
+        sideMenuButtonsArray = [sideMenuCreditsButton, sideMenuRateButton]
+
         self.sideMenuLeadingConstraint.constant = -170
         
-        // sideMenuBlurVisualEffectView.layer.shadowOpacity = 1
+        configureSideMenuButtonsLayout(buttons: sideMenuButtonsArray)
         
         // MARK: - 3D TOUCH  (checking user device force touch capability)
         if (traitCollection.forceTouchCapability == .available) {
@@ -95,6 +94,17 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
             // HERE I ENCOUNTERED THE MOST UNBELIEVABLE ERROR:
             // I DIDN'T REALIZE THAT MY PREVIOUS VC FILE WAS FOR A UITABLEVIEWCONTROLLER INSTEAD OF A NORMAL VC; I FORGOT TO CHANGE THE SOURCEVIEW OF PREVIEWING TO THE TABLE VIEW INSTEAD OF THE MAIN VIEW
             registerForPreviewing(with: self, sourceView: self.mbTableView)
+        }
+    }
+    
+    // Placement needs to be re-arranged
+    func configureSideMenuButtonsLayout(buttons: [UIButton]) -> Void {
+        for n in 0..<sideMenuButtonsArray.count {
+            let button = sideMenuButtonsArray[n]
+            button.layer.cornerRadius = 5.0
+            button.layer.shadowOpacity = 1.0
+            button.layer.shadowRadius = 3.0
+            button.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         }
     }
     
@@ -191,15 +201,13 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
             sideMenuLeadingConstraint.constant = -170
             
             dismissSideMenu()
-            /* UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 20.0, options: .curveEaseInOut, animations: {
-             self.view.layoutIfNeeded()
-             }, completion: nil) */
         } else {
             self.sideMenuLeadingConstraint.constant = 0
             
             // Animating sliding menu
             UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 20.0, options: .curveEaseInOut, animations: {
                 self.view.layoutIfNeeded()
+                self.navigationBarLeftSettingButton.image = UIImage(named: "Cancel")
             }, completion: nil)
         }
         menuShowing = !menuShowing
@@ -208,13 +216,37 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
     func dismissSideMenu() {
         sideMenuLeadingConstraint.constant = -170
         
-        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 20.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.7, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 20.0, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
+            self.navigationBarLeftSettingButton.image = UIImage(named: "Settings")
         }, completion: nil)
     }
     
-    func animateSideMenu(menuInOut inOut: Bool) {
+    // func animateSideMenu(menuInOut inOut: Bool) {
         
+    // }
+    
+
+    @IBAction func creditsSideMenuButtonTouched(_ sender: Any) {
+        
+    }
+
+    @IBAction func creditsSideMenuButtonPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func rateSideMenuButtonTouched(_ sender: Any) {
+        self.sideMenuRateButton.layer.shadowRadius = 1.0
+        UIView.animate(withDuration: 0.15) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func rateSideMenuButtonPressed(_ sender: Any) {
+        self.sideMenuRateButton.layer.shadowRadius = 3.0
+        UIView.animate(withDuration: 0.15) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     // MARK: - Navigation

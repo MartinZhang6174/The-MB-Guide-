@@ -180,6 +180,10 @@
                                             <state key="normal" title="  Developer Credits  ">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="creditsSideMenuButtonPressed:" destination="ybM-8y-gWX" eventType="touchUpInside" id="hUH-tu-vz9"/>
+                                                <action selector="creditsSideMenuButtonTouched:" destination="ybM-8y-gWX" eventType="touchDown" id="bBC-hI-GI9"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGt-8r-Bcv">
                                             <rect key="frame" x="31.5" y="115" width="107" height="33"/>
@@ -189,6 +193,10 @@
                                             <state key="normal" title="  Rate The App!  ">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="rateSideMenuButtonPressed:" destination="ybM-8y-gWX" eventType="touchUpInside" id="XJd-qe-0hF"/>
+                                                <action selector="rateSideMenuButtonTouched:" destination="ybM-8y-gWX" eventType="touchDown" id="ErT-8P-GgM"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -229,7 +237,7 @@
                         <outlet property="mbTableView" destination="Rxh-bY-isM" id="RGA-wd-pRa"/>
                         <outlet property="navigationBarLeftSettingButton" destination="2Fq-24-cM0" id="88H-UA-0Ng"/>
                         <outlet property="sideMenuBlurVisualEffectView" destination="RBf-GH-8dT" id="ybQ-Rd-bGo"/>
-                        <outlet property="sideMenuCreditsButton" destination="EGt-8r-Bcv" id="TLW-Kv-pwn"/>
+                        <outlet property="sideMenuCreditsButton" destination="Q3M-zS-317" id="114-io-gZu"/>
                         <outlet property="sideMenuLeadingConstraint" destination="osL-uz-Dme" id="PyD-Qs-ZW3"/>
                         <outlet property="sideMenuRateButton" destination="EGt-8r-Bcv" id="b4b-dm-6Te"/>
                         <segue destination="vvt-yJ-tbk" kind="show" identifier="presentVehicleDetailViewControllerSegue" id="e52-ge-3H9"/>
