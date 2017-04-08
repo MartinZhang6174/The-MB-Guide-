@@ -16,6 +16,7 @@ class MBVehicleDetailViewController: UIViewController {
     var tapGestureRecognizer = UITapGestureRecognizer()
     
     var imageAlphaReduced = false
+    var darkViewAppliedOnImage = false
     
     // Outlets for UI properties
     @IBOutlet weak var mainScrollView: UIScrollView!
@@ -24,7 +25,7 @@ class MBVehicleDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(vehicleDetailImageName)
+        // print(vehicleDetailImageName)
         
         vehicleDetailTitleLabel.text = vehicleDetailTitleText
         
@@ -89,17 +90,15 @@ class MBVehicleDetailViewController: UIViewController {
     //    }
     
     func handleTouchOnImageScrollView() {
-        print("Image touched once.")
         if !self.imageAlphaReduced {
             imageAlphaReduced = true
-            mainScrollView.alpha = 0.1
+            mainScrollView.alpha = 0.7
             mainScrollView.isScrollEnabled = false
         } else {
             imageAlphaReduced = false
             mainScrollView.alpha = 1.0
             mainScrollView.isScrollEnabled = true
         }
-        
     }
     
     
