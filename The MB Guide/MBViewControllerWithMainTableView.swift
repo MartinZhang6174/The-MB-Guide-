@@ -24,55 +24,15 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
     // MARK: Segue Identifier
     let detailSegueID = "presentVehicleDetailViewControllerSegue"
     
-    // Defining all Mercedes vehicles here
-    var allMBVehicles: [MBVehicleModel] {
-        
-        // A klass
-        let aKlass45Sedan = a45()
-        
-        // C klass
-        let cKlass63SSedan = c63ssedan()
-        let cKlass63SCoupe = c63scoupe()
-        let cKlass43Sedan = c43sedan()
-        let cKlass43Coupe = c43coupe()
-        let cKlass43Cab = c43cabriolet()
-        let cKlass63SCab = c63scabriolet()
-        let cKlass63W204 = c63W204()
-        
-        // E klass
-        let eKlass43Sedan = e43sedan()
-        let eKlass43Wagon = e43wagon()
-        let eKlass63Sedan = e63sedan()
-        let eklass63SSedan = e63ssedan()
-        
-        // GT klass
-        let gtKlassCoupe = gt()
-        let gtKlassRoadster = gtroadster()
-        let gtKlassSCoupe = gts()
-        let gtKlassRCoupe = gtr()
-        let gtKlassCRoadster = gtc()
-        
-        return [aKlass45Sedan,
-                cKlass63SSedan,
-                cKlass63SCoupe,
-                cKlass43Sedan,
-                cKlass43Coupe,
-                cKlass43Cab,
-                cKlass63SCab,
-                cKlass63W204,
-                eKlass43Sedan,
-                eKlass43Wagon,
-                eKlass63Sedan,
-                eklass63SSedan,
-                gtKlassCoupe,
-                gtKlassRoadster,
-                gtKlassSCoupe,
-                gtKlassRCoupe,
-                gtKlassCRoadster]
-    }
+    let mbGarage = MBGarage()
+    var allMBVehicles: [MBVehicleModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let start = Date()
+        
+        self.allMBVehicles = mbGarage.allMBVehicles()
         
         self.mbTableView.delegate = self
         self.mbTableView.dataSource = self
@@ -91,10 +51,13 @@ class MBViewControllerWithMainTableView: UIViewController, UITableViewDelegate, 
         // MARK: - 3D TOUCH  (checking user device force touch capability)
         if (traitCollection.forceTouchCapability == .available) {
             
-            // HERE I ENCOUNTERED THE MOST UNBELIEVABLE ERROR:
+            // head scratching error encountered:
             // I DIDN'T REALIZE THAT MY PREVIOUS VC FILE WAS FOR A UITABLEVIEWCONTROLLER INSTEAD OF A NORMAL VC; I FORGOT TO CHANGE THE SOURCEVIEW OF PREVIEWING TO THE TABLE VIEW INSTEAD OF THE MAIN VIEW
             registerForPreviewing(with: self, sourceView: self.mbTableView)
         }
+        /////////////////////<<<<<<<<<<>>>>>>>>>>>>
+        let end = Date()
+        print("Time elapsed: \(end.timeIntervalSince(start))")
     }
     
     // Placement needs to be re-arranged

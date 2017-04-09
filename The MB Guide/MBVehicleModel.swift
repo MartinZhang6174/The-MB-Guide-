@@ -13,11 +13,11 @@ enum vehicleClassTitle {
 }
 
 enum vehicleBodyStyleEnum {
-    case coupe, sedan, wagon, sUV, roadster, van
+    case coupe, sedan, wagon, suv, roadster, van
 }
 
 enum vehicleDriveTrainEnum {
-    case frontWheelDrive, allWheelDrive, rearWheelDrive
+    case frontWheelDrive, permanentFourWheelDrive, adjustableFourWheelDrive, rearWheelDrive
 }
 
 class MBVehicleModel: NSObject {
@@ -25,7 +25,7 @@ class MBVehicleModel: NSObject {
     let vehicleName: String
 //    let vehicleDescription: String
     let mSRP: String // A String value because there are can be commas and a range ----------->>>>>>>>> in USD!!!!
-    let weight: Int // Use kilograms
+    let weight: Int // Use EU Kerb weight in kilograms
     let horsepower: Int // Use EU horsepower since AMG website doesn't provide American ponnies (PS is the unit wanted)
     let maxHorsepowerRPM: String // A String because there will sometimes be two values <<<<<<<
     let torque: Int // Nm
